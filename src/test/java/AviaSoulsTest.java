@@ -9,9 +9,9 @@ class AviaSoulsTest {
     Ticket ticket2 = new Ticket("MSK", "SPB", 6500, 15, 23);
     Ticket ticket3 = new Ticket("MSK", "SPB", 4000, 7, 12);
     Ticket ticket5 = new Ticket("MSK", "SPB", 4500, 12, 17);
-    Ticket ticket6 = new Ticket("MSK", "Саранск", 4500, 18, 23);
-    Ticket ticket7 = new Ticket("MSK", "Сочи", 6700, 18, 23);
-    Ticket ticket8 = new Ticket("Астрахань", "SPB", 5800, 18, 23);
+    Ticket ticket6 = new Ticket("MSK", "NY", 4500, 18, 23);
+    Ticket ticket7 = new Ticket("MSK", "LA", 6700, 18, 23);
+    Ticket ticket8 = new Ticket("KR", "SPB", 5800, 18, 23);
 
     @Test
     public void TicketTestCompareToTiLessTi3() {
@@ -53,11 +53,11 @@ class AviaSoulsTest {
     @Test
     public void TicketTestsSearchLotsOfMatchesSortPrice() {
         AviaSouls aviaSouls = new AviaSouls();
-        aviaSouls.add(ticket);//price 3000  "Москва","Брянск"
-        aviaSouls.add(ticket2);//price 6500  "Москва","Брянск"
-        aviaSouls.add(ticket3);//price 4000  "Москва","Брянск"
-        aviaSouls.add(ticket4);//price 2500  "Москва","Брянск"
-        aviaSouls.add(ticket5);//price 4500  "Москва","Брянск"
+        aviaSouls.add(ticket);
+        aviaSouls.add(ticket2);
+        aviaSouls.add(ticket3);
+        aviaSouls.add(ticket4);
+        aviaSouls.add(ticket5);
 
         //Т.к. сортируемые билеты отсортированы по Откуда/куда,
         // то после Arrays.sort(result) следующий параметр для сортировки будет - цена по возрастанию
@@ -71,9 +71,9 @@ class AviaSoulsTest {
     @Test
     public void TicketTestsSearchOneOfMatchesSortPrice() {
         AviaSouls aviaSouls = new AviaSouls();
-        aviaSouls.add(ticket5); //price 4000  "Москва","Брянск"
-        aviaSouls.add(ticket6);//price 4500  "Москва","Саранск"
-        aviaSouls.add(ticket7);//price 6000  "Москва","Сочи"
+        aviaSouls.add(ticket5);
+        aviaSouls.add(ticket6);
+        aviaSouls.add(ticket7);
 
 
         //Т.к. сортируемые билеты отсортированы по Откуда/куда,
@@ -88,9 +88,9 @@ class AviaSoulsTest {
     @Test
     public void TicketTestsSearchNoMoreMatchesSortPrice() {
         AviaSouls aviaSouls = new AviaSouls();
-        aviaSouls.add(ticket6); //price 4500  "Москва","Саранск"
-        aviaSouls.add(ticket7);//price 6700  "Москва","Сочи"
-        aviaSouls.add(ticket8);//price 5800  "Астрахань","Брянск"
+        aviaSouls.add(ticket6);
+        aviaSouls.add(ticket7);
+        aviaSouls.add(ticket8);
 
 
         //Т.к. сортируемые билеты отсортированы по Откуда/куда,
